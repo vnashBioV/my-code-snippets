@@ -39,3 +39,19 @@ function addProductsData(){
         } 
     })
 }
+
+//Mapping through the the products
+<div className="container">
+        {products.map((product, i) =>{
+            return <div key={i}>
+                <div onClick={() => {
+                    navigate(`/productinfo/${product.id}`)
+                }}>
+                    <img src={product.imageURL} alt="" className='product-img'/>
+                    <h3>{product.name}</h3>
+                    <b>{product.price}</b>
+                    <p><i className="fas fa-star"></i><span>{product.rating}</span></p>
+                </div>
+            </div>
+        })}
+</div>
